@@ -4,19 +4,17 @@
 [ext_resource type="Script" path="res://block.gd" id="1_23558"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bg5bk"]
-size = Vector2(100, 20)
+size = Vector2(100, 100)
 
 [node name="Block" type="RigidBody2D"]
 collision_layer = 2
 collision_mask = 3
-mass = 28.59
-continuous_cd = 2
-freeze = true
 script = ExtResource("1_23558")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.78125, 0.15625)
+scale = Vector2(0.8, 0.360001)
 texture = ExtResource("1_1fw38")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1, 0.440001)
 shape = SubResource("RectangleShape2D_bg5bk")

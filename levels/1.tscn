@@ -1,0 +1,67 @@
+[gd_scene load_steps=5 format=3 uid="uid://ckmjxsx4nxfr1"]
+
+[ext_resource type="PackedScene" uid="uid://d0sh8perlhh7c" path="res://wall.tscn" id="1_cwjhn"]
+[ext_resource type="PackedScene" uid="uid://c75456gtaqjod" path="res://holder.tscn" id="2_8pj6k"]
+[ext_resource type="PackedScene" uid="uid://citcmkipqfe8p" path="res://block.tscn" id="3_ks1hs"]
+[ext_resource type="PackedScene" uid="uid://brt2gepa2o1gd" path="res://GoalTape.tscn" id="4_sevap"]
+
+[node name="1" type="Node2D"]
+
+[node name="Collisions" type="Node" parent="."]
+
+[node name="Wall" parent="Collisions" instance=ExtResource("1_cwjhn")]
+position = Vector2(574, 638)
+scale = Vector2(11.56, 1)
+
+[node name="Wall2" parent="Collisions" instance=ExtResource("1_cwjhn")]
+position = Vector2(7, 325)
+rotation = 1.57079
+scale = Vector2(6.49933, 1.00006)
+
+[node name="Wall3" parent="Collisions" instance=ExtResource("1_cwjhn")]
+position = Vector2(1144, 103)
+rotation = 1.57079
+scale = Vector2(2.08, 1)
+
+[node name="Wall4" parent="Collisions" instance=ExtResource("1_cwjhn")]
+position = Vector2(576, 10)
+scale = Vector2(11.6, 1)
+
+[node name="Wall5" parent="Collisions" instance=ExtResource("1_cwjhn")]
+position = Vector2(129, 233)
+scale = Vector2(0.156527, 0.597164)
+
+[node name="Wall6" parent="Collisions" instance=ExtResource("1_cwjhn")]
+position = Vector2(214, 234)
+scale = Vector2(0.139556, 0.631184)
+
+[node name="Wall7" parent="Collisions" instance=ExtResource("1_cwjhn")]
+position = Vector2(580, 356)
+rotation = 1.57079
+scale = Vector2(4.06362, 0.836029)
+
+[node name="Wall8" parent="Collisions" instance=ExtResource("1_cwjhn")]
+position = Vector2(1144, 505)
+rotation = 1.57079
+scale = Vector2(2.88, 1)
+
+[node name="Holder" parent="." instance=ExtResource("2_8pj6k")]
+position = Vector2(167, 507)
+
+[node name="GoalTape" parent="." instance=ExtResource("4_sevap")]
+position = Vector2(1215, 286)
+scale = Vector2(7.13032, 7.11056)
+
+[node name="Node" type="Node" parent="."]
+
+[node name="Block" parent="Node" instance=ExtResource("3_ks1hs")]
+position = Vector2(171, 176)
+
+[node name="Block2" parent="Node" instance=ExtResource("3_ks1hs")]
+position = Vector2(172, 126)
+
+[node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="Node"]
+position = Vector2(171, 176)
+node_a = NodePath("../Block")
+node_b = NodePath("../Block2")
+disable_collision = false

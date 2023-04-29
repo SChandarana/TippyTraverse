@@ -1,10 +1,17 @@
 extends RigidBody2D
 
+const LINEAR_DAMPING = 3.0
+const LINEAR_DAMPING_DEFAULT = 1.0
+const ANGULAR_DAMPING = 3.0
+const ANGULAR_DAMPING_DEFAULT = 0.1
 
-# Called when the node enters the scene tree for the first time.
+func is_parcel():
+	pass
 
+func activate_damping():
+	self.linear_damp = LINEAR_DAMPING
+	self.angular_damp = ANGULAR_DAMPING
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
-		self.freeze = false
+func deactivate_damping():
+	self.linear_damp = LINEAR_DAMPING_DEFAULT
+	self.angular_damp = ANGULAR_DAMPING_DEFAULT

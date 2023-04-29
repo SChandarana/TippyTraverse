@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://brt2gepa2o1gd"]
+
+[ext_resource type="Script" path="res://GoalTape.gd" id="1_u5xgn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6qm2b"]
+
+[node name="GoalTape" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_u5xgn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_6qm2b")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
